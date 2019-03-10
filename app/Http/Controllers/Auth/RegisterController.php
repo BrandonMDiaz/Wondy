@@ -29,6 +29,10 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+    protected function redirectTo(){
+      // se podrian hacer mas calculos aqui para que saquemos informacion
+      return '/documento'
+    }
 
     /**
      * Create a new controller instance.
