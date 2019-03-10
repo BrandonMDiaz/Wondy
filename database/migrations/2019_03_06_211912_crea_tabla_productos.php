@@ -14,7 +14,11 @@ class CreaTablaProductos extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->primary('id');
+            $table->string('imagen');
+            $table->tinyinteger('tipo');
+            $table->float('precio');
+            $table->char('talla');
             $table->timestamps();
         });
     }
