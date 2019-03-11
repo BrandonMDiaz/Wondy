@@ -43,6 +43,31 @@ Route::get('/equipo', function(){
 
 });
 
+// ************************************************* //
+// **************** Productos ********************** //
+// ************************************************* //
+// Podriamos hacer que mandemos un {hombre} o {mujer} y solamente completamos
+// la pagina con los datos de cada uno <--- preguntale al profesor.
+// aun no deciso si dejarlo como nuevo o no
+Route::get('/nuevo', 'ProductoController@productosNuevos')->name('mas_comprado');
+Route::get('/hombre', 'ProductoController@productosHombres')->name('hombre');
+Route::get('/mujer', 'ProductoController@productosMujeres')->name('mujer');
+Route::get('/ninio', 'ProductoController@productosNinio')->name('ninio');
+Route::get('/ninia', 'ProductoController@productosNinia')->name('ninia');
+
+// subdiviciones tipo = {chamarra, manga larga, manga corta, sueter, manga normal}
+Route::get('/hombre/{id_tipo}', 'ProductoController@hombreTipo')->name('tipoH');
+Route::get('/mujer/{id_tipo}', 'ProductoController@mujerTipo')->name('tipoM');
+Route::get('/ninio/{id_tipo}', 'ProductoController@ninioTipo')->name('tipoN');
+Route::get('/ninia/{id_tipo}', 'ProductoController@niniaTipo')->name('tipoNa');
+
+
+
+
+
+
+
+
 Auth::routes();
 // se observa que manda a llamar la clase del controlador, arroba y despues el metodo
 // ctrl + p para buscar un archivo

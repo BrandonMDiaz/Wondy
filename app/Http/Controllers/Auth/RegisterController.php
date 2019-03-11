@@ -31,7 +31,7 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
     protected function redirectTo(){
       // se podrian hacer mas calculos aqui para que saquemos informacion
-      return '/documento'
+      return '/documento';
     }
 
     /**

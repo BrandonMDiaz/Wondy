@@ -21,6 +21,17 @@
 </head>
 <body>
     <div id="app">
+        <div class="contenedor">
+            <h1 class="logo"> Wondy </h1>
+            <div class="infor">
+              <ul>
+                <li>Diseña</li>
+                <li>Perfil</li>
+                <li>Login</li>
+                <li>carrito</li>
+              </ul>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -34,13 +45,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ action('')}}">Info</a>
+                        {{-- <a class="nav-link" href="{{ action('')}}">Info</a> --}}
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/contacto">Equipo</a>
+                        <a class="nav-link" href="/equipo">Equipo</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contacto')}}">Contacto</a>
+                        {{-- <a class="nav-link" href="{{ route('contacto')}}">Contacto</a> --}}
                       </li>
                     </ul>
 
