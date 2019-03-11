@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </ul>
             </div>
         </div>
-        @yield('men')
+        @include('men')
         <main class="py-4">
             @yield('content')
         </main>
