@@ -13,6 +13,10 @@
 
 // Route::get('/',);
 
+Route::get('/inicio', function(){
+    return view('inicio');
+});
+
 Route::get('/info/{nombre}', function(){
     return view('paginas.contacto');
 });
