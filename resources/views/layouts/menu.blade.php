@@ -1,6 +1,4 @@
-@extends('layouts.master')
 
-@section('men')
 <div class="header">
   <div class="header-top">
     <div class="container">
@@ -140,4 +138,3 @@
       </div>
     </div>
   </div>
-@endsection
