@@ -15,10 +15,12 @@ class CreaTablaProductos extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->primary('id');
+            $table->string('nombre');
             $table->string('imagen');
             $table->tinyinteger('tipo');
             $table->float('precio');
             $table->char('talla');
+            $table->string('color');
             $table->timestamps();
         });
     }

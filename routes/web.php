@@ -61,12 +61,10 @@ Route::get('/mujer/{id_tipo}', 'ProductoController@mujerTipo')->name('tipoM');
 Route::get('/ninio/{id_tipo}', 'ProductoController@ninioTipo')->name('tipoN');
 Route::get('/ninia/{id_tipo}', 'ProductoController@niniaTipo')->name('tipoNa');
 
-
-
-
-
-
-
+//crear diseño
+Route::get();
+Route::get('/cd', 'ProductoController@subirDisenio' )->name('agregarDiseño');
+Route::post('/diseño', 'ProductoController@agregar')->name('agregarProducto');
 
 Auth::routes();
 // se observa que manda a llamar la clase del controlador, arroba y despues el metodo
