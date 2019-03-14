@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
 
 class ProductoController extends Controller
 {
@@ -11,73 +12,53 @@ class ProductoController extends Controller
 // ******************************************
 
     public function index(){
+      // $productos = Producto::all();
+      // asi le mandamos los datos a la vista
+      return view('productos.index', compact('productos'));
+    }
+
+    public function show(Request $request, $genero){
+      $genero = strtolower($genero); //hacerlo minusculas
+      if($genero == 'hombre')
+        //hacer busqueda en la base de datos
+        //regresar busqueda a la vista
+        return view('productos.index', compact($genero));
+      }
+      else if($genero == 'mujer'){
+
+      }
+      else if($genero == 'ninio') {
+
+      }
+      else {
+        return view('productos.index');
+      }
+    }
+
+    public function create(){
+      return view('productos.agregar');
+    }
+
+    public function store(Request $request){
+      // dd($request->all()); // para debuguear
+      $product = new Producto();
+    }
+
+    public function edit(){
 
     }
 
-    public function index(){
+    public function update(Request $request, Producto $producto){
 
     }
 
-    public function index(){
+    public function destroy(){
 
     }
 
-    public function index(){
-
-    }
-
-    public function index(){
-
-    }
-    public function agregar(){
-      return view('productos.agregar'); //cambiarle el nombre a la vista a algo mas bonito
-    }
-
-    public function agregar(){
-
-    }
-
-    public function masComprado()
-    {
-      // code...
-    }
-
-    public function productosHombres(){
-
-    }
-
-    public function productosMujeres()
-    {
-      // code...
-    }
-
-    public function productosNinio()
-    {
-      // code...
-    }
-
-    public function productosNinia() {
-
-    }
-
-// ************************************** //
-// *************** Tipos **************** //
-// ************************************** //
-
-    public function hombreTipo() {
-
-    }
-
-    public function mujerTipo() {
-
-    }
-
-    public function ninioTipo() {
-
-    }
-
-    public function niniaTipo() {
-
+    public function productosTipo($genero, $tipo){
+      $gener = $genero. " " . $tipo;
+      return $gener;
     }
 
 }

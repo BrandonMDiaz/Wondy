@@ -12,59 +12,58 @@
 */
 
 // Route::get('/',);
-
-Route::get('/info/{nombre}', function(){
-    return view('paginas.contacto');
-});
+//
+// Route::get('/info/{nombre}', function(){
+//     return view('paginas.contacto');
+// });
 
 // si se pone una variable con signo de interrogacion significa que peude  o no recibir algo
 // si se usa el signo, en function se tiene que poner que es igual a null.
-Route::get('/bienvenida/{nombre}/{apellido?}', function($nombre, $apellido = null){
-    // return $nombre . ' ' . $apellido;
-    //esta es una manera de enviar variables a la funcion.
-    // return view('paginas.bienvenida')->with([
-    //   'nombre' => $nombre,
-    //   'apellido' => $apellido
-    //   ]);
-    // esta es otra manera
-    // return view('paginas.bienvenida' compact('nombre', 'apellido'));
-    return view('paginas.bienvenida', compact('nombre', 'apellido'))
-    ->with([
-      'nombre_completo' => $nombre . ' ' . $apellido ]);
+// Route::get('/bienvenida/{nombre}/{apellido?}', function($nombre, $apellido = null){
+//     // return $nombre . ' ' . $apellido;
+//     //esta es una manera de enviar variables a la funcion.
+//     // return view('paginas.bienvenida')->with([
+//     //   'nombre' => $nombre,
+//     //   'apellido' => $apellido
+//     //   ]);
+//     // esta es otra manera
+//     // return view('paginas.bienvenida' compact('nombre', 'apellido'));
+//     return view('paginas.bienvenida', compact('nombre', 'apellido'))
+//     ->with([
+//       'nombre_completo' => $nombre . ' ' . $apellido ]);
+//
+// });
 
-});
-
-Route::get('/contacto', function(){
-    return view('paginas.contacto');
-});
-
-Route::get('/equipo', function(){
-  return view('paginas.equipo');
-
-});
+// Route::get('/contacto', function(){
+//     return view('paginas.contacto');
+// });
+//
+// Route::get('/equipo', function(){
+//   return view('paginas.equipo');
+//
+// });
 
 // ************************************************* //
 // **************** Productos ********************** //
 // ************************************************* //
+
+//nombre que le pone a ese recuerso es 'productos' y asi tambien se va a llamar
+//en la url,,, el segundo argumento te dice el controlador que te hace.
+Route::resource('productos', 'ProductoController');
+
 // Podriamos hacer que mandemos un {hombre} o {mujer} y solamente completamos
 // la pagina con los datos de cada uno <--- preguntale al profesor.
 // aun no deciso si dejarlo como nuevo o no
-Route::get('/nuevo', 'ProductoController@productosNuevos')->name('mas_comprado');
-Route::get('/hombre', 'ProductoController@productosHombres')->name('hombre');
-Route::get('/mujer', 'ProductoController@productosMujeres')->name('mujer');
-Route::get('/ninio', 'ProductoController@productosNinio')->name('ninio');
-Route::get('/ninia', 'ProductoController@productosNinia')->name('ninia');
-
+Route::get('productos/{genero}', 'ProductoController@productoGenero')->name('productoGenero');
+Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->name('productoTipo');
+//subdiviciones genero = {hombre, mujer, niño, niña}
 // subdiviciones tipo = {chamarra, manga larga, manga corta, sueter, manga normal}
-Route::get('/hombre/{id_tipo}', 'ProductoController@hombreTipo')->name('tipoH');
-Route::get('/mujer/{id_tipo}', 'ProductoController@mujerTipo')->name('tipoM');
-Route::get('/ninio/{id_tipo}', 'ProductoController@ninioTipo')->name('tipoN');
-Route::get('/ninia/{id_tipo}', 'ProductoController@niniaTipo')->name('tipoNa');
+
 
 //crear diseño
-Route::get();
-Route::get('/cd', 'ProductoController@subirDisenio' )->name('agregarDiseño');
-Route::post('/diseño', 'ProductoController@agregar')->name('agregarProducto');
+// Route::get('/producto', 'ProductoController@index' )->name('agregarDiseño');
+// Route::post('/diseño', 'ProductoController@agregar')->name('agregarProducto');
+
 
 Auth::routes();
 // se observa que manda a llamar la clase del controlador, arroba y despues el metodo
