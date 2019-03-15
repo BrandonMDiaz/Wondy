@@ -54,6 +54,10 @@ Route::resource('productos', 'ProductoController');
 // Podriamos hacer que mandemos un {hombre} o {mujer} y solamente completamos
 // la pagina con los datos de cada uno <--- preguntale al profesor.
 // aun no deciso si dejarlo como nuevo o no
+Route::get('comprar/{producto}', function(){
+    return view('productos.producto');
+});
+
 Route::get('productos/{genero}', 'ProductoController@productoGenero')->name('productoGenero');
 Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->name('productoTipo');
 //subdiviciones genero = {hombre, mujer, niño, niña}

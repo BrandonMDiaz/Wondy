@@ -91,3 +91,54 @@ align:left;
   text-decoration: none;
   cursor: pointer;
 }
+
+/********* mostras descripcion de productos ************/
+/*******************************************************/
+.producto-grid {
+  display: grid;
+  grid-template-columns: [producto] 60% [especificaciones] 40%;
+}
+
+.producto-ver{
+  grid-column-start: producto;
+  display: grid;
+  grid-template-columns: [lista] 15% [playera] 85%;
+}
+.producto-vistas{
+  grid-column-start: lista;
+  padding-left: 60px;
+}
+.img-vista{
+  border: 1px solid;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.img-vista:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.wrapper-producto{
+  grid-column-start: playera;
+  justify-self: center;
+  max-width:550px ;
+  max-height:600px ;
+  min-width: 550px;
+  min-height: 600px;
+  display: inline-block;
+}
+
+/*  Si quieres cambiar para que la playera tenga un tamaño fijo
+hay que mover aqui y el de arriba, quitarle el wrapper (quitar la clase de arriba)*/
+.img-2 {
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+  /* width: 550px;
+  height: 600px; */
+}
+
+.especificaciones {
+  padding-top: 30px;
+}
