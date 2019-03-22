@@ -11,7 +11,9 @@
 |
 */
 
-// Route::get('/',);
+Route::get('/', function(){
+  return view('index');
+});
 //
 // Route::get('/info/{nombre}', function(){
 //     return view('paginas.contacto');
@@ -50,7 +52,8 @@
 //nombre que le pone a ese recuerso es 'productos' y asi tambien se va a llamar
 //en la url,,, el segundo argumento te dice el controlador que te hace.
 Route::resource('productos', 'ProductoController');
-
+        // ->parameters(['materiales' => 'material']); //se usa eso por si te genera
+        // una ruta con un nombre raro.
 // Podriamos hacer que mandemos un {hombre} o {mujer} y solamente completamos
 // la pagina con los datos de cada uno <--- preguntale al profesor.
 // aun no deciso si dejarlo como nuevo o no
@@ -62,7 +65,6 @@ Route::get('productos/{genero}', 'ProductoController@productoGenero')->name('pro
 Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->name('productoTipo');
 //subdiviciones genero = {hombre, mujer, niño, niña}
 // subdiviciones tipo = {chamarra, manga larga, manga corta, sueter, manga normal}
-
 
 //crear diseño
 // Route::get('/producto', 'ProductoController@index' )->name('agregarDiseño');

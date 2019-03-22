@@ -3,14 +3,22 @@
 @section('content')
 
   <div class="container">
-    <form class="agregar-productos" action="" method="post">
+    @if(@isset($procutos))
+      <form class="agregar-productos" action="{{route('productos.destroy', $producto->id)}}" method="post">
+    @else
+    <form class="agregar-productos" action="{{route('productos.destroy', $producto->id)}}" method="post">
+    @endif
+      {{-- @csrf // session expirada, sirve para generar un token o clave para validar --}}
+      {{-- que el formulario que esta reciviendo sea de dentro de la aplicacion, te genera
+       un campo oculto en automatico.--}}
       <div class="row">
-
           <div class="col-sm">
             <input type="file" name="file" id="file" class="inputfile" />
+            {{-- para mostrar un valor si no es nulo dos opciones--}}
+            {{-- {{ isset($dependencia) ? $dependencia->dependencia : ''}} --}}
+            {{-- {{ $dependencia->dependencia ?? '' }} --}}
             <label for="file">Choose a file</label>
           </div>
-
           <div class="col-sm">
               <label for="nombre">Nombre</label>
               <input type="text" name="nombre" placeholder= "nombre del producto">
