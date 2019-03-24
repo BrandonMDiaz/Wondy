@@ -13,6 +13,22 @@
           </div>
 
             <div class="productos">
+              {{-- @foreach ($producto as $prod)
+                <div class="producto">
+                  <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
+                  <div class="playera-nombre">
+                    <p>{{$prod->descripcion}}</p>
+                  </div>
+                  <div class="precio-estrellas">
+                    <p>{{$prod->precio}}</p>
+                    <img src="" alt="">
+                  </div>
+                  <button class="add-cart-btn" type="button" name="button">
+                    <span>Add to cart<span>
+                    <img class="add-cart-img" src="{{URL::asset('/images/add.png')}}">
+                  </button>
+                </div>
+              @endforeach --}}
               @for ($i=0; $i < 10; $i++)
                 <div class="producto">
                   <img class="img-1"src="{{URL::asset('/images/playera.jpg')}}" alt="Playera con diseño">
