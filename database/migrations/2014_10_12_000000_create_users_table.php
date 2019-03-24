@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('username');
             $table->string('birthday');
-            $table->tinyinteger('tipo');
+            $table->tinyinteger('tipo'); //diseñador, tienda, usuario
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
