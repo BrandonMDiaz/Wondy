@@ -20,6 +20,7 @@ class CreaTablaProductos extends Migration
             $table->float('precio');
             $table->char('talla');
             $table->float('calificacion');
+            $table->string('nombre');
             $table->string('color');
             $table->unsignedInteger('num_ventas');
             $table->timestamps();
