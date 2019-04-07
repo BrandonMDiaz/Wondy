@@ -14,7 +14,7 @@ class CreaTablaProductos extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->increments('id');
             $table->string('imagen');
             $table->tinyinteger('tipo');//manga larga, normal sueter, sudadera, playera
             $table->float('precio');
@@ -27,6 +27,18 @@ class CreaTablaProductos extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
+
+        Schema::create('likes', function (Blueprint $table) {
+          $table->unsignedInteger('user_id');
+          $table->unsignedInteger('producto_id');
+
+          $table->foreign('user_id')
+              ->references('id')
+              ->on('users');
+          $table->foreign('producto_id')
+              ->references('id')
+              ->on('productos');
+        });
     }
 
     /**
@@ -37,5 +49,7 @@ class CreaTablaProductos extends Migration
     public function down()
     {
         Schema::dropIfExists('productos');
+        Schema::dropIfExists('likes');
+
     }
 }
