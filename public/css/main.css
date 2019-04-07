@@ -142,3 +142,25 @@ hay que mover aqui y el de arriba, quitarle el wrapper (quitar la clase de arrib
 .especificaciones {
   padding-top: 30px;
 }
+
+
+/***************************************/
+/********************Pefil**************/
+/***************************************/
+
+.perfil{
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  text-align: 35px;
+  margin-left: 70px;
+}
+
+.nombre-perfil{
+  text-align: center;
+  font-size: 35px;
+}
+
+.perf {
+  margin-top: 6%;
+}

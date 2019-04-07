@@ -71,6 +71,15 @@ Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->
 // Route::post('/diseño', 'ProductoController@agregar')->name('agregarProducto');
 
 
+//****************************************//
+//************* perfil ******************//
+//***************************************//
+
+Route::get('profile', function(){
+  return view('perfil.index');
+});
+
+
 Auth::routes();
 // se observa que manda a llamar la clase del controlador, arroba y despues el metodo
 // ctrl + p para buscar un archivo

@@ -8,6 +8,12 @@ use App\Producto;
 class ProductoController extends Controller
 {
 
+  //se usa un metodo o el otro
+  //todo lo que si ahy que aceptar
+  // protected $fillable = [];
+  //todos lo que tiene que estar seguro, se asigna solo, por lo tanto no lo mandamos
+  // protected $guarder = ['id','user_id'];
+
 // ************* Subir diseños **************
 // ******************************************
 
@@ -19,11 +25,11 @@ class ProductoController extends Controller
     }
 
     public function show(Request $request, $genero){
-      $product = Producto::find($idProducto);
-      $genero = strtolower($genero); //hacerlo minusculas
+      // $product = Producto::find($idProducto);
+      // $genero = strtolower($genero); //hacerlo minusculas
       if($genero == 'hombre'){
-        //hacer busqueda en la base de datos
-        //regresar busqueda a la vista
+        // hacer busqueda en la base de datos
+        // regresar busqueda a la vista
         return view('productos.index', compact($genero));
       }
       else if($genero == 'mujer'){
@@ -42,9 +48,23 @@ class ProductoController extends Controller
     }
 
     public function store(Request $request){
+      // $producto = new Producto($request->all());
+      // si necesitamos algo que no esté en nuestro formulario tenemos
+      // que hacer un merge sobre el formulario
+      // $request->merge([
+      //   'recibido' => \Carbon\Carbon::now()->toDateString();
+      // ]);
+      // y se le agrega algo que no tenia y ya no te marcaria error
+      $producto = new Producto;
+      $request->validate([
+        'nombre' => 'required|max:255',
+        'tipo'
+      ]);
       // dd($request->all()); // para debuguear
       Storage::disk('local')->put('file.txt', 'Contents');
       $product = new Producto();
+
+      Documento::create($request->all());
     }
 
     public function edit(){
@@ -67,4 +87,9 @@ class ProductoController extends Controller
       return $gener;
     }
 
+    public function user(){
+      return $this->belongsTo(User::class);
+      // desde la vista se usa esto producto->user->name
+      // producto->user->email
+    }
 }
