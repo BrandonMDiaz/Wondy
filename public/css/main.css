@@ -44,9 +44,21 @@
   display: grid;
   grid-template-columns: [filtro] 25% [productos] 75%;
 }
-.filtros{
+.filtros-perfil{
   grid-column-start: filtro;
+
 }
+
+.filtro-container {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5%;
+}
+
+.filtro{
+  margin-right: 5%;
+}
+
 .productos {
   grid-column-start: productos;
   display: flex;
@@ -95,6 +107,7 @@ align:left;
 /********* mostras descripcion de productos ************/
 /*******************************************************/
 .producto-grid {
+  margin-top: 3%;
   display: grid;
   grid-template-columns: [producto] 60% [especificaciones] 40%;
 }
@@ -123,9 +136,9 @@ align:left;
   grid-column-start: playera;
   justify-self: center;
   max-width:550px ;
-  max-height:600px ;
+  max-height:500px ;
   min-width: 550px;
-  min-height: 600px;
+  min-height: 500px;
   display: inline-block;
 }
 
@@ -163,4 +176,141 @@ hay que mover aqui y el de arriba, quitarle el wrapper (quitar la clase de arrib
 
 .perf {
   margin-top: 6%;
+}
+
+/***************************************/
+/********************Comentarios**************/
+/***************************************/
+
+.comentarios {
+  margin-left: 8%;
+  margin-bottom: 2%;
+}
+.comentario {
+  max-width: 800px;
+}
+
+.foto-perfil-comentario{
+  display: inline;
+  width: 50px;
+  height: 50px;
+}
+
+.perfil-comentario{
+  display: table-cell;
+  vertical-align: baseline;
+}
+
+.nombre-perfil-comentario{
+  display: inline;
+  vertical-align: baseline;
+}
+.calificacion-comentario{
+  display: inline;
+  width: 80px;
+  height: 40px;
+}
+.body-comentario{
+  margin-top: 10px;
+  margin-left: 7%;
+}
+.fecha-comentario{
+  font-size: 13px;
+}
+.texto-comentario{
+  font-size: 18px;
+}
+.ajustes-d{
+margin-bottom: 4%;
+display: block;
+height: 40px;
+}
+.ajustes{
+  float:right;
+  margin-right: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+/***************************************/
+/********************Editar**************/
+/***************************************/
+
+.edit-box {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: [imagen] 23% [datos] 52% [botones] 25%;
+    height:250px;
+    width:90%;
+
+    /* max-width:90%;
+    max-height:250px; */
+
+    margin-left: 6%;
+    border: 1px solid #fff;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+  }
+
+.edit-box:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.imagen-editar{
+  grid-column-start: imagen;
+  justify-self: center;
+  align-self: center;
+  height: 250px;
+}
+
+.imagen-editar img{
+  width: 180px;
+  height: 230px;
+}
+
+
+.inf-producto-edit{
+  grid-column-start: datos;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: [primer] 50% [segundo] 50%;
+}
+
+.inf-1{
+  grid-column-start: primer;
+}
+.inf-2{
+  grid-column-start: segundo;
+}
+
+.botones{
+  grid-column-start: botones;
+  justify-self: center;
+  align-self: center;
+}
+
+.botones button{
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  width: 200px;
+  justify-self: center;
+}
+
+.botones button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-editar{
+  background-color: #4CAF50;
+  margin-bottom: 20%;
+}
+.btn-eliminar{
+  background-color: #f44336;
 }

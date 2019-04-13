@@ -9,7 +9,7 @@ class ProductoController extends Controller
 {
 
   //se usa un metodo o el otro
-  //todo lo que si ahy que aceptar
+  //todo lo que si hay que aceptar
   // protected $fillable = [];
   //todos lo que tiene que estar seguro, se asigna solo, por lo tanto no lo mandamos
   // protected $guarder = ['id','user_id'];
@@ -18,29 +18,15 @@ class ProductoController extends Controller
 // ******************************************
 
     public function index(){
-      $productos = Producto::all();
+      // $productos =App\Producto->paginate(23);
+      $productos = Producto::all(); //pedimos todos los productos
       // dd($productos);
       // asi le mandamos los datos a la vista
       return view('productos.index', compact('productos'));
     }
 
-    public function show(Request $request, $genero){
-      // $product = Producto::find($idProducto);
-      // $genero = strtolower($genero); //hacerlo minusculas
-      if($genero == 'hombre'){
-        // hacer busqueda en la base de datos
-        // regresar busqueda a la vista
-        return view('productos.index', compact($genero));
-      }
-      else if($genero == 'mujer'){
-        return 'mujer';
-      }
-      else if($genero == 'ninio') {
-        return "nunio";
-      }
-      else {
-        return view('productos.index');
-      }
+    public function show(Request $request){
+      return view('productos.producto');
     }
 
     public function create(){
@@ -56,19 +42,18 @@ class ProductoController extends Controller
       // ]);
       // y se le agrega algo que no tenia y ya no te marcaria error
       $producto = new Producto;
-      $request->validate([
-        'nombre' => 'required|max:255',
-        'tipo'
-      ]);
-      // dd($request->all()); // para debuguear
-      Storage::disk('local')->put('file.txt', 'Contents');
-      $product = new Producto();
 
+      $producto = $request->input('');
+      $producto = $request->input('');
+
+      Storage::disk('local')->put('file.txt', 'Contents');
       Documento::create($request->all());
+
+      $producto->save();
     }
 
     public function edit(){
-
+      return view('productos.editar');
     }
 
     public function update(Request $request, Producto $producto){
@@ -83,8 +68,44 @@ class ProductoController extends Controller
     }
 
     public function productosTipo($genero, $tipo){
-      $gener = $genero. " " . $tipo;
-      return $gener;
+
+      if($genero == 'hombre'){
+        $productos = $Producto::whereRaw('tipo = 1 and genero = 1')->get();
+        return view('productos.index', compact($productos));
+      }
+      else if($genero == 'mujer'){
+        $productos = $Producto::whereRaw('tipo = 2 and genero = 2')->get();
+        return view('productos.index', compact($productos));
+      }
+      else if($genero == 'ninio') {
+        $productos = $Producto::whereRaw('tipo = 3 and genero = 3')->get();
+        return view('productos.index', compact($productos));
+      }
+      else {
+        return view('productos.index');
+      }
+    }
+
+    public function perfil($usuario){
+      return view('perfil.index');
+    }
+
+    public function productoGenero($genero) {
+      if($genero == 'hombre'){
+        $productos = $Producto::where('tipo', 1);
+        return view('productos.index', compact($productos));
+      }
+      else if($genero == 'mujer'){
+        $productos = $Producto::where('tipo', 2);
+        return view('productos.index', compact($productos));
+      }
+      else if($genero == 'ninio') {
+        $productos = $Producto::where('tipo', 3);
+        return view('productos.index', compact($productos));
+      }
+      else {
+        return view('productos.index');
+      }
     }
 
     public function user(){

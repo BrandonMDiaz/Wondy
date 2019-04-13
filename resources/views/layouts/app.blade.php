@@ -27,8 +27,8 @@
             <div class="infor">
               <ul>
                 <li> <a href="#"> Diseña </a></li>
-                <li> <a href="#"> Perfil </a></li>
-                <li> <a href="#"> Login  </a></li>
+                {{-- <li> <a href="{{ route('profile', auth()->user()->id) }}"> Perfil </a></li> --}}
+                <li> <a href="{{ route('login') }}"> Login  </a></li>
                 <li> <a href="#"> Carrito </a></li>
               </ul>
             </div>
@@ -49,16 +49,16 @@
                         <a class="nav-link" href="/equipo">Diseñar</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/equipo">Productos</a>
+                        <a class="nav-link" href="{{ route('productos.index') }}">Productos</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/equipo">Hombre</a>
+                        {{-- <a class="nav-link" href="{{ route('productos.show') }}">Hombre</a> --}}
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/equipo">Mujer</a>
+                        <a class="nav-link" href="{{ route('productos.index') }}">Mujer</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/equipo">Niños</a>
+                        <a class="nav-link" href="{{ route('productos.index') }}">Niños</a>
                       </li>
                       <li class="nav-item">
                         {{-- <a class="nav-link" href="{{ route('contacto')}}">Contacto</a> --}}

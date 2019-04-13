@@ -5,16 +5,17 @@
 
   <div class="agregar-productos">
     <div class="container-productos">
-      <div class="filtros">
+      <div class="filtros-perfil">
         <div>
           <img class="perfil" src="{{URL::asset('/images/playera.jpg')}}" alt="foto de perfil">
           <h1 class="nombre-perfil">Crackbron</h1>
 
         </div>
-        <label for="">Precio</label>
-        <label for="">tipo</label>
-        <label for="">estrellas</label>
-        <label for="">Color</label>
+        <label for="precio">Precio</label>
+        <label for="tipo">tipo</label>
+        <label for="talla">tipo</label>
+        <label for="estrellas">estrellas</label>
+        <label for="color">Color</label>
       </div>
 
       <div>
@@ -34,9 +35,11 @@
     </button>
   </div>
   @endforeach --}}
-    <div class="filtro">
-      <input type="text" name="" value="">
-    </div>
+  <div class="ajustes-d">
+    <a href="#">
+      <img class="ajustes"src="{{URL::asset('/images/ajustes.png')}}" alt="ajustes">
+    </a>
+  </div>
     <div class="productos">
       @for ($i=0; $i < 10; $i++)
         <div class="producto">

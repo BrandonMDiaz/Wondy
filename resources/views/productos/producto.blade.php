@@ -20,4 +20,21 @@
         <p>Talla</p>
     </form>
   </div>
+  <div class="comentarios">
+    <div class="comentario">
+      <a href="#">
+        {{-- <div class=""> --}}
+          <img class="foto-perfil-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="img">
+        {{-- </div> --}}
+        {{-- <div class="perfil-comentario"> --}}
+          <span class="nombre-perfil-comentario"> Crackbron</span>
+        {{-- </div> --}}
+      </a>
+      <img class="calificacion-comentario" src="{{URL::asset('/images/playera.jpg')}}" alt="calificacion">
+      <div class="body-comentario">
+        <h3 class="fecha-comentario">10/10/1247</h3>
+        <h4 class="texto-comentario">Me gusta mucho ir a comprar ropa ahi</h4>
+      </div>
+    </div>
+  </div>
 @endsection

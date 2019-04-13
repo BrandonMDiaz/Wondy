@@ -14,10 +14,7 @@
 Route::get('/', function(){
   return view('index');
 });
-//
-// Route::get('/info/{nombre}', function(){
-//     return view('paginas.contacto');
-// });
+
 
 // si se pone una variable con signo de interrogacion significa que peude  o no recibir algo
 // si se usa el signo, en function se tiene que poner que es igual a null.
@@ -62,7 +59,7 @@ Route::get('comprar/{producto}', function(){
 });
 
 Route::get('productos/{genero}', 'ProductoController@productoGenero')->name('productoGenero');
-Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->name('productoTipo');
+Route::get('productos/{genero}/{tipo_id}', 'ProductoController@productosTipo')->name('productoTipo');
 //subdiviciones genero = {hombre, mujer, niño, niña}
 // subdiviciones tipo = {chamarra, manga larga, manga corta, sueter, manga normal}
 
@@ -75,13 +72,9 @@ Route::get('productos/{genero}/{id_tipo}', 'ProductoController@productosTipo')->
 //************* perfil ******************//
 //***************************************//
 
-Route::get('profile', function(){
-  return view('perfil.index');
-});
-
+Route::get('profile/{f}', 'ProductoController@perfil')->name('profile');
+Route::get('profile/edit', 'ProductoController@edite')->name('profile.edit');
 
 Auth::routes();
-// se observa que manda a llamar la clase del controlador, arroba y despues el metodo
 // ctrl + p para buscar un archivo
-// aqui se le pone name para que agarre ese nombre, como un pseudonimo-
 Route::get('/home', 'HomeController@index')->name('home');

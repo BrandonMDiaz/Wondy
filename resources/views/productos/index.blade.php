@@ -11,7 +11,17 @@
             <label for="">estrellas</label>
             <label for="">Color</label>
           </div>
-
+          <div class="filtro-container">
+            <div class="filtro">
+              <label for="text"> Ordenar por: </label>
+              <select>
+                <option value="Agregado reciente">Agregado reciente</option>
+                <option value="Mas comprado">Mas comprado</option>
+                <option value="Precio de bajo a alto">Precio de bajo a alto</option>
+                <option value="Precio de alto a bajo">Precio de alto a bajo</option>
+              </select>
+            </div>
+          </div>
             <div class="productos">
               {{-- @foreach ($producto as $prod)
                 <div class="producto">
