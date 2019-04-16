@@ -4,18 +4,55 @@
 
 
   <div class="agregar-productos">
-    <div class="container-productos">
+    <div class="container-productos-perfil">
       <div class="filtros-perfil">
-        <div>
           <img class="perfil" src="{{URL::asset('/images/playera.jpg')}}" alt="foto de perfil">
           <h1 class="nombre-perfil">Crackbron</h1>
+            <div class="tipo-filtro">
+              <label for="">Tipo:</label>
+              <ul>
+                <li>
+                  <a href="#">Playera normal</a>
+                </li>
+                <li>
+                  <a href="#">Playera sin manga</a>
+                </li>
+                <li>
+                  <a href="#">Playera manga larga</a>
+                </li>
+                <li>
+                  <a href="#">Sueter</a>
+                </li>
+                <li>
+                  <a href="#">Sudadera</a>
+                </li>
+              </ul>
+            </div>
+            <div class="precio-filtro">
+              <form class="" action="index.html" method="post" id="precio">
+                <label for="">Precio:</label>
+                <br>
+                <span class="inside-input">$</span>
+                <input id="min" type="text" name="Min" placeholder="Min">
+                <span class="inside-input">$</span>
+                <input id="max" type="text" name="Max" placeholder="Max">
+              </form>
+              <button id="submit-precio" type="submit" form="precio" value="Submit">Ir</button>
+            </div>
+            <div class="estrella-filtro">
+              <label for="">Estrellas:</label>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            {{-- <div class="color-filtro">
 
-        </div>
-        <label for="precio">Precio</label>
-        <label for="tipo">tipo</label>
-        <label for="talla">tipo</label>
-        <label for="estrellas">estrellas</label>
-        <label for="color">Color</label>
+            </div> --}}
+
       </div>
 
       <div>
