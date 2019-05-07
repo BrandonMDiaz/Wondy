@@ -18,14 +18,14 @@ class CreaTablaDisenios extends Migration
             $table->string('disenio');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('producto_id');
-            $table->integer('imageable_id');
-            $table->string('imageable_type');
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
-            $table->foreign('producto_id')
-                ->references('id')
-                ->on('productos');
+            // $table->integer('imageable_id');
+            // $table->string('imageable_type');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users');
+            // $table->foreign('producto_id')
+            //     ->references('id')
+            //     ->on('productos');
 
             $table->timestamps();
         });

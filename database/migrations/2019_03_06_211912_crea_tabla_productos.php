@@ -26,7 +26,7 @@ class CreaTablaProductos extends Migration
             $table->unsignedInteger('num_ventas');
             $table->timestamps();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users');
         });
 
         Schema::create('likes', function (Blueprint $table) {

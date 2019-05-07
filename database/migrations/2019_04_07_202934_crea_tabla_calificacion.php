@@ -19,12 +19,12 @@ class CreaTablaCalificacion extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('producto_id');
 
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users');
-            $table->foreign('producto_id')
-                ->references('id')
-                ->on('productos');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users');
+            // $table->foreign('producto_id')
+            //     ->references('id')
+            //     ->on('productos');
 
 
             $table->timestamps();

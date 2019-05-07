@@ -19,13 +19,13 @@ class CreaTablaPedidos extends Migration
             $table->string('metodo_de_envio');
             $table->unsignedInteger('tienda_id');
             $table->unsignedInteger('producto_id');
-
-            $table->foreign('tienda_id')
-                ->references('id')
-                ->on('tiendas');
-            $table->foreign('producto_id')
-                ->references('id')
-                ->on('productos');
+            //
+            // $table->foreign('tienda_id')
+            //     ->references('id')
+            //     ->on('tiendas');
+            // $table->foreign('producto_id')
+            //     ->references('id')
+            //     ->on('productos');
 
             $table->timestamps();
         });
