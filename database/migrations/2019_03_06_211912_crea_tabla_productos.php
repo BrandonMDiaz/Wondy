@@ -14,14 +14,39 @@ class CreaTablaProductos extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->primary('id');
             $table->string('nombre');
+=======
+            $table->increments('id');
+>>>>>>> feature-migration-procutos
             $table->string('imagen');
-            $table->tinyinteger('tipo');
+            $table->tinyinteger('tipo');//manga larga, normal sueter, sudadera, playera
             $table->float('precio');
             $table->char('talla');
+<<<<<<< HEAD
             $table->string('color');
+=======
+            $table->float('calificacion');
+            $table->string('nombre');
+            $table->string('color');
+            $table->unsignedInteger('num_ventas');
+>>>>>>> feature-migration-procutos
             $table->timestamps();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+
+        Schema::create('likes', function (Blueprint $table) {
+          $table->unsignedInteger('user_id');
+          $table->unsignedInteger('producto_id');
+
+          $table->foreign('user_id')
+              ->references('id')
+              ->on('users');
+          $table->foreign('producto_id')
+              ->references('id')
+              ->on('productos');
         });
     }
 
@@ -33,5 +58,7 @@ class CreaTablaProductos extends Migration
     public function down()
     {
         Schema::dropIfExists('productos');
+        Schema::dropIfExists('likes');
+
     }
 }
