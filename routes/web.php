@@ -45,7 +45,7 @@ Route::get('/', function(){
 // ************************************************* //
 // **************** Productos ********************** //
 // ************************************************* //
-
+  
 //nombre que le pone a ese recuerso es 'productos' y asi tambien se va a llamar
 //en la url,,, el segundo argumento te dice el controlador que te hace.
 Route::resource('productos', 'ProductoController');
@@ -78,3 +78,5 @@ Route::get('profile/edit', 'ProductoController@edite')->name('profile.edit');
 Auth::routes();
 // ctrl + p para buscar un archivo
 Route::get('/home', 'HomeController@index')->name('home');
+//Rutas para archivos
+Route::resource('archivo', 'ArchivoController', ['except' => ['create', 'edit', 'update']]);
