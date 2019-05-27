@@ -1,3 +1,7 @@
+## Brandon Manuel Diaz Flores.
+
+## Pedro Morales Enriquez.
+
 # Wondy
 Wondy es una plataforma para vender ropa, los usuarios podran crear un perfil con sus prendas y ponerlas en venta.
 Tambien podran subir sus diseños o crearlos en la pagina y por un cierto precio podran comprar esos diseños.
@@ -9,11 +13,6 @@ Usaremos las  siguientes herramientas
 #### Laragon
 
 Laragon es una opción relativamente nueva para la creación de lo que llamamos el entorno de desarrollo, es decir, todo un conjunto de programas necesarios para desarrollar aplicaciones. Sirve para trabajar con PHP, pero también con otros lenguajes del lado del servidor, como Node, Python o Ruby. 
-
-#### Xampp
-
-Es un software multiplataforma de gestion de base de datos e interprete de lenguajes de programcaion como PHP y Pearl.
-Este  software fue utilizado proque es de uso libre y multiplataforma.
 
 #### Composer
 
@@ -34,11 +33,8 @@ Para instalar composer se teclearan una serie de comandos en la consola. Para es
 Lo mismo haremos con laragon, aqui esta su pagina web 
 https://laragon.org/
 
-El siguiente paso seria crear una base de datos en mysql y cargar el archivo de abajo.
-  // aun no tenemos archivo
+El siguiente paso seria crear una base de datos en mysql 
   
-Se carga la base de datos a nuestro gestor y ya esta listo para usar
-
 Una vez que se tiene la base de datos, se descarga el proyecto de github: https://github.com/BrandonMDiaz/Wondy.git
 
 Una vez que tenemos los servicios y programas antes mencionados nuestro proyecto ya está descargado.
@@ -47,8 +43,14 @@ Una vez que tenemos los servicios y programas antes mencionados nuestro proyecto
 
 Ya que tienes tu proyecto descargado tienes que copiar el archivo .env.example y renombrarlo como “ .env ” dentro de este archivo modificaras las configuraciones de tu BD, para configurarlo pones el nombre de usuario con el que tienes permisos, tambien pones el password, recuerda poner tambien el nombre de la base de datos.
 
-Despues abre una consola, vas al lugar donde se descargó el proyecto y haces el comando “  composer install ” para descargar todas las dependencias de tu proyecto, tambien el comando: artisan key:generate. para generar una llave.
+Despues abre una consola, vas al lugar donde se descargó el proyecto y haces el comando:
+“  composer install "
+para descargar todas las dependencias de tu proyecto, tambien el comando:
+artisan key:generate
+para generar una llave.
 
+Por ultimo con se usa el siguiente comando para poblar la base de datos
+php artisan db:seed 
 Una vez que hicimos esto nuestro proyecto esta listo para usarse completamente localmente. 
 
 Brandon Manuel Diaz Flores.
